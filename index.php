@@ -5,15 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel</title>
-    <style>
-        body {
-            background: #000;
-            color: #fff;
-        }
-        span {
-            font-size: 24px;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </head>
 <body>
     <?php
@@ -60,17 +53,28 @@
 
     ?>
 
-    <div>
-        <?php 
-            foreach($hotels as $hoteL) { ?>
-                <p>Nome: <span><?php echo $hoteL["name"]; ?></span></p>
-                <p>Descizione: <span><?php echo $hoteL["description"]; ?></span></p>
-                <p>Parcheggio: <span><?php echo $hoteL["parking"]; ?></span></p>
-                <p>Voto: <span><?php echo $hoteL["vote"]; ?></span></p>
-                <p>Distanza dal centro: <span><?php echo $hoteL["distance_to_center"]; ?></span></p>
-                <hr>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrizione</th>
+                <th scope="col">Parcheggio</th>
+                <th scope="col">Voto</th>
+                <th scope="col">Distanza dal centro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($hotels as $hotel) { ?>  
+                <tr>
+                    <th scope="row"><?php echo $hotel["name"]; ?></th>
+                    <td><?php echo $hotel["description"]; ?></td>
+                    <td><?php echo $hotel["parking"]; ?></td>
+                    <td><?php echo $hotel["vote"]; ?></td>
+                    <td><?php echo $hotel["distance_to_center"]; ?></td>
+                </tr>
             <?php } ?>
-    </div>
+        </tbody>
+    </table>
 
 </body>
 </html>
