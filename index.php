@@ -50,5 +50,16 @@
         ];
 
     ?>
+
+    <div>
+        <?php 
+            foreach($hotels as $hoteL) {
+                foreach($hoteL as $hotel) { ?>
+                    <p><?php echo $hotel; ?></p>
+                <?php } ?>
+                <hr>
+            <?php } ?>
+    </div>
+
 </body>
 </html>
