@@ -5,6 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel</title>
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+        }
+        span {
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -53,10 +62,12 @@
 
     <div>
         <?php 
-            foreach($hotels as $hoteL) {
-                foreach($hoteL as $hotel) { ?>
-                    <p><?php echo $hotel; ?></p>
-                <?php } ?>
+            foreach($hotels as $hoteL) { ?>
+                <p>Nome: <span><?php echo $hoteL["name"]; ?></span></p>
+                <p>Descizione: <span><?php echo $hoteL["description"]; ?></span></p>
+                <p>Parcheggio: <span><?php echo $hoteL["parking"]; ?></span></p>
+                <p>Voto: <span><?php echo $hoteL["vote"]; ?></span></p>
+                <p>Distanza dal centro: <span><?php echo $hoteL["distance_to_center"]; ?></span></p>
                 <hr>
             <?php } ?>
     </div>
